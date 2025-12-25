@@ -1,0 +1,334 @@
+{
+  "project": "FlashDelivery",
+  "version": "1.1.0",
+  "updateDate": "2025-12-21",
+  "checklist": {
+    "phase1_installation": {
+      "title": "Fase 1: Instalação & Setup (20 min)",
+      "priority": "CRITICAL",
+      "tasks": [
+        {
+          "id": 1,
+          "title": "npm install",
+          "description": "Instalar todas as dependências",
+          "command": "npm install",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 2,
+          "title": "Copiar .env.example → .env.local",
+          "description": "Criar arquivo de ambiente local",
+          "command": "cp .env.example .env.local",
+          "timeMinutes": 1,
+          "completed": false
+        },
+        {
+          "id": 3,
+          "title": "Preencher credenciais Firebase",
+          "description": "Editar .env.local com credenciais reais",
+          "file": ".env.local",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 4,
+          "title": "Testar servidor local",
+          "description": "Executar npm run dev e verificar no browser",
+          "command": "npm run dev",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    },
+    "phase2_quality": {
+      "title": "Fase 2: Verificações de Qualidade (15 min)",
+      "priority": "HIGH",
+      "tasks": [
+        {
+          "id": 5,
+          "title": "Executar lint",
+          "description": "Verificar erros ESLint",
+          "command": "npm run lint",
+          "timeMinutes": 3,
+          "completed": false
+        },
+        {
+          "id": 6,
+          "title": "Formatar código",
+          "description": "Aplicar Prettier",
+          "command": "npm run format",
+          "timeMinutes": 2,
+          "completed": false
+        },
+        {
+          "id": 7,
+          "title": "Type checking",
+          "description": "Verificar tipos TypeScript",
+          "command": "npm run type-check",
+          "timeMinutes": 3,
+          "completed": false
+        },
+        {
+          "id": 8,
+          "title": "Revisar documentação de linting",
+          "description": "Ler LINTING_SETUP.md",
+          "file": "LINTING_SETUP.md",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    },
+    "phase3_testing": {
+      "title": "Fase 3: Testes (15 min)",
+      "priority": "HIGH",
+      "tasks": [
+        {
+          "id": 9,
+          "title": "Executar testes",
+          "description": "Rodar suite de testes Vitest",
+          "command": "npm run test",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 10,
+          "title": "Verificar cobertura",
+          "description": "Gerar relatório de cobertura",
+          "command": "npm run test:coverage",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 11,
+          "title": "Criar testes unitários básicos",
+          "description": "Adicionar testes para componentes críticos",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    },
+    "phase4_build": {
+      "title": "Fase 4: Build & Análise (20 min)",
+      "priority": "HIGH",
+      "tasks": [
+        {
+          "id": 12,
+          "title": "Build produção",
+          "description": "Compilar para produção",
+          "command": "npm run build",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 13,
+          "title": "Analisar bundle",
+          "description": "Abrir dist/stats.html e analisar",
+          "file": "dist/stats.html",
+          "timeMinutes": 10,
+          "completed": false
+        },
+        {
+          "id": 14,
+          "title": "Revisar PERFORMANCE_GUIDE.md",
+          "description": "Entender otimizações implementadas",
+          "file": "PERFORMANCE_GUIDE.md",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    },
+    "phase5_pwa": {
+      "title": "Fase 5: PWA Setup (15 min)",
+      "priority": "MEDIUM",
+      "tasks": [
+        {
+          "id": 15,
+          "title": "Gerar ícones reais",
+          "description": "Substituir placeholders por ícones da marca",
+          "tools": ["favicon-generator.org", "icon-generator.com"],
+          "timeMinutes": 10,
+          "completed": false
+        },
+        {
+          "id": 16,
+          "title": "Capturar screenshots",
+          "description": "Screenshots para manifest.json",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 17,
+          "title": "Testar em Chrome",
+          "description": "Verificar install button",
+          "timeMinutes": 3,
+          "completed": false
+        },
+        {
+          "id": 18,
+          "title": "Testar modo offline",
+          "description": "Desabilitar rede e verificar funcionamento",
+          "timeMinutes": 3,
+          "completed": false
+        },
+        {
+          "id": 19,
+          "title": "Revisar PWA_GUIDE.md",
+          "description": "Entender implementação de PWA",
+          "file": "PWA_GUIDE.md",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    },
+    "phase6_security": {
+      "title": "Fase 6: Segurança (30 min)",
+      "priority": "CRITICAL",
+      "tasks": [
+        {
+          "id": 20,
+          "title": "Implementar Firestore Rules",
+          "description": "Copiar regras de firebaseRules.ts para Firebase Console",
+          "file": "utils/firebaseRules.ts",
+          "timeMinutes": 10,
+          "completed": false
+        },
+        {
+          "id": 21,
+          "title": "Testar validações",
+          "description": "Testar email, CPF, telefone, senha em Login",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 22,
+          "title": "Configurar rate limiting",
+          "description": "Implementar em login e signup",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 23,
+          "title": "Revisar SECURITY_GUIDE.md",
+          "description": "Entender todas as implementações de segurança",
+          "file": "SECURITY_GUIDE.md",
+          "timeMinutes": 10,
+          "completed": false
+        }
+      ]
+    },
+    "phase7_deployment": {
+      "title": "Fase 7: Deploy (15 min)",
+      "priority": "CRITICAL",
+      "tasks": [
+        {
+          "id": 24,
+          "title": "Configurar HTTPS",
+          "description": "HTTPS é obrigatório para PWA e Service Workers",
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 25,
+          "title": "Deploy em Vercel/Netlify/Firebase",
+          "description": "Escolher plataforma e fazer deploy",
+          "options": ["Vercel", "Netlify", "Firebase Hosting"],
+          "timeMinutes": 5,
+          "completed": false
+        },
+        {
+          "id": 26,
+          "title": "Executar Lighthouse",
+          "description": "Score PWA > 90, Performance > 80",
+          "timeMinutes": 5,
+          "completed": false
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "totalTasks": 26,
+    "totalTimeMinutes": 140,
+    "totalTimeHours": 2.33,
+    "newFiles": 10,
+    "updatedFiles": 5,
+    "newUtilityFunctions": 50,
+    "documentationLines": 3000
+  },
+  "deliverables": {
+    "configuration": [
+      ".eslintrc.json",
+      ".prettierrc.json",
+      ".prettierignore",
+      "vitest.config.ts",
+      ".env.example"
+    ],
+    "utilities": [
+      "utils/performanceUtils.ts",
+      "utils/pwaUtils.ts",
+      "utils/securityUtils.ts",
+      "utils/securityHeaders.ts",
+      "utils/firebaseRules.ts"
+    ],
+    "documentation": [
+      "LINTING_SETUP.md",
+      "PERFORMANCE_GUIDE.md",
+      "PWA_GUIDE.md",
+      "SECURITY_GUIDE.md",
+      "UPDATE_SUMMARY.md"
+    ],
+    "scripts": [
+      "verify-setup.sh",
+      "package.json (8 new scripts)"
+    ]
+  },
+  "improvements": {
+    "performance": [
+      "Code splitting automático",
+      "Lazy loading de rotas",
+      "Runtime cache",
+      "Compressão gzip",
+      "Memoização com useMemo/useCallback"
+    ],
+    "quality": [
+      "ESLint + Prettier",
+      "TypeScript strict mode",
+      "Vitest para testes",
+      "Type checking automático"
+    ],
+    "pwa": [
+      "Service Worker v3",
+      "Offline-first strategy",
+      "Push notifications",
+      "App shortcuts",
+      "File handling"
+    ],
+    "security": [
+      "Input validation",
+      "Rate limiting",
+      "Firestore rules",
+      "Security headers",
+      "XSS prevention"
+    ]
+  },
+  "nextSteps": {
+    "shortTerm": [
+      "Instalar dependências",
+      "Implementar Firestore Rules",
+      "Gerar ícones reais",
+      "Testar PWA offline"
+    ],
+    "mediumTerm": [
+      "Adicionar 2FA",
+      "Implementar logging",
+      "Criar testes unitários",
+      "Configurar CI/CD"
+    ],
+    "longTerm": [
+      "Submeter para Google Play",
+      "Submeter para Microsoft Store",
+      "Teste de penetração",
+      "Otimizar SEO"
+    ]
+  }
+}

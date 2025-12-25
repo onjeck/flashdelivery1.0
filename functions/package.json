@@ -1,0 +1,15 @@
+{
+  "name": "functions",
+  "private": true,
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "deploy": "firebase deploy --only functions:deleteUser"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.10.1",
+    "firebase-functions": "^4.4.1"
+  }
+}

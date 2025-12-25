@@ -1,0 +1,7 @@
+{
+  "name": "FlashDelivery Central",
+  "description": "A complete PWA for managing courier deliveries (Central de Motoboys), featuring separate portals for Clients, Admins, and Drivers with real-time tracking simulation.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
