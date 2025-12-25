@@ -6,6 +6,7 @@ Este guia irá ajudá-lo a publicar o aplicativo no GitHub e na Vercel.
 
 As seguintes alterações e correções foram implementadas no código e estão prontas para serem enviadas:
 
+- **Correção do Build**: Adiciona a dependência `terser` para corrigir um erro de build na Vercel.
 - **Correção do Tema**: O principal problema da troca de temas que não funcionava foi corrigido. O painel de administração agora reflete o tema selecionado.
 - **Correção do Sistema de Notificações**: Um erro que impedia o funcionamento das notificações foi corrigido pela adição do `NotificationProvider` ausente no `App.tsx`.
 - **Gestão de Administradores**: A página "Gestão de Cadastros" agora busca e exibe corretamente a lista de administradores, permitindo a sua visualização e gerenciamento.
@@ -15,32 +16,25 @@ As seguintes alterações e correções foram implementadas no código e estão 
 
 Abra o seu terminal na pasta do projeto e execute os seguintes comandos para fazer o commit das alterações que foram feitas.
 
-**Mensagem de Commit Sugerida:**
-
-```
-feat: Implementa troca de tema e corrige bugs críticos
-
-Este commit aborda várias questões e melhorias no painel de administração:
-
-- **Tema**: Corrige um bug importante onde a troca de tema não funcionava. Os estilos fixos no AdminDashboard foram substituídos por variáveis CSS dinâmicas do contexto do tema.
-- **Sistema de Notificação**: Corrige um erro crítico adicionando o `NotificationProvider` que estava faltando no componente principal do aplicativo.
-- **Gerenciamento de Usuários**: Implementa corretamente a exibição e o gerenciamento de contas de administrador na página "Gestão de Cadastros".
-- **Privacidade do Recibo**: Remove o nome de usuário de login dos recibos gerados para clientes e motoristas para melhorar a privacidade.
-```
-
 **Comandos Git:**
 
-1. Adicione todos os arquivos modificados ao stage:
+1. Instale as dependências atualizadas:
+   ```bash
+   npm install
+   ```
+
+2. Adicione todos os arquivos modificados ao stage (incluindo `package.json` e `package-lock.json`):
    ```bash
    git add .
    ```
 
-2. Faça o commit com a mensagem sugerida (copie e cole a mensagem acima):
+3. Faça o commit com a mensagem sugerida (copie e cole a mensagem abaixo):
    ```bash
-   git commit -m "feat: Implementa troca de tema e corrige bugs críticos
+   git commit -m "fix: Adiciona terser para corrigir build e implementa melhorias
 
 Este commit aborda várias questões e melhorias no painel de administração:
 
+- **Build**: Adiciona a dependência `terser` para corrigir um erro de build na Vercel.
 - **Tema**: Corrige um bug importante onde a troca de tema não funcionava. Os estilos fixos no AdminDashboard foram substituídos por variáveis CSS dinâmicas do contexto do tema.
 - **Sistema de Notificação**: Corrige um erro crítico adicionando o `NotificationProvider` que estava faltando no componente principal do aplicativo.
 - **Gerenciamento de Usuários**: Implementa corretamente a exibição e o gerenciamento de contas de administrador na página "Gestão de Cadastros".
