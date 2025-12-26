@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { NotificationProvider } from './contexts/NotificationContext';
+import './index.css';
 
 // Register Service Worker for PWA capabilities
 if ('serviceWorker' in navigator) {
